@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles.css">
 </head>
 <body>
+ <section>
  <h2>Alta de Producto</h2>
  <% String error = (String)request.getAttribute("error");
         if (error != null && !error.isEmpty()) { %>
@@ -15,12 +16,17 @@
     <% } %>
     
     <form action="${pageContext.request.contextPath}/alta" method="post">
-        Nombre: <input type="text" name="nombre" required><br>
-        Sección: <input type="text" name="seccion" required><br>
-        Precio: <input type="number" name="precio" step="0.01" required><br>
-        Stock: <input type="number" name="stock" required><br>
-        <input type="submit" value="Agregar Producto">
+    	<p><label for="nombre">Nombre</label></p>
+        <input type="text" name="nombre" required><br>
+        <p><label for="seccion">Sección</label></p>
+        <input type="text" name="seccion" required><br>
+        <p><label for="precio">Precio</label></p>
+        <input type="number" name="precio" step="0.01" required><br>
+        <p><label for="stock">Stock</label></p>
+        <input type="number" name="stock" required><br>
+        <div class="button-row"><input type="submit" value="Agregar Producto"></div>
     </form>
 <a href="${pageContext.request.contextPath}/index.html">Volver al Inicio</a>
+</section>
 </body>
 </html>
